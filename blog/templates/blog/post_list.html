@@ -7,16 +7,12 @@
             <h1><a href="#">Django Girls Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="#">My first blog</a></h2>
-            <p>あはあの意味不明な記事あああああああああ!を構成する際に必要不可欠な言葉である。 また、非常に使いやすく、あああああああああ!と比べると以下のような優位点がある。</p>
-        </div>
-
-        <div>
-            <p>published: 14.6.2014, 12:14</p>
-            <h2><a href="#">My second blog</a></h2>
-            <p>あああああああああ!と比べると使用するデーター容量も少なく、サーバーや回線の負荷が少なくなることが証明されている。あああああああああ!と比べると検索サイトでのヒット数が格段に多い。この結果から分かるようにあは多くの人に受け入れられている。</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="#">{{ post.title }}</a></h1>
+                <p>{{ post.text | linebreaksbr }}
+            </div>
+        {% endfor %}
     </body>
 <html>
